@@ -15,10 +15,11 @@ int main(int argc, char **argv) {
   }
   auto func = lib.get_function<void>("myname");
   if (!func) {
-    std::cout << "Function not valid: " << lib.error() << std::endl;
+    std::cout << "Function is not valid: " << lib.error() << std::endl;
     return EXIT_FAILURE;
   }
   func();
+  lib.close();
   return EXIT_SUCCESS;
 }
 ```
